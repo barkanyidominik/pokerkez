@@ -140,7 +140,7 @@ public class PokerHand {
         Card.Ranks high = highCard.getRank();
         // Öt magas sorok kezelése. Ha sor és az első kártya KETTES, akkor 5 magas sorunk van. (Az ACE a végén van, a növekvő sorrend miatt)
         Card firstCard = cards.get(0);
-        if(descriptor.isStraight() && firstCard.equalsRank(Card.Ranks.Two)) {
+        if(descriptor.isStraight() && firstCard.equalsRank(Card.Ranks.Two) && lastCard.equalsRank(Card.Ranks.Ace)) {
             high = Card.Ranks.Five;
         }
         return high;
